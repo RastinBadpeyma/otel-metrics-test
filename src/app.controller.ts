@@ -5,13 +5,9 @@ import { AppService } from './app.service';
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
-  @Get('hello')
-  getHello(): string {
-    return this.appService.getHello();
-  }
 
   @Get('work')
   async doWork(): Promise<string> {
-    return this.appService.simulateWork();
+    return this.appService.simulateGatewayRequest();
   }
 }
